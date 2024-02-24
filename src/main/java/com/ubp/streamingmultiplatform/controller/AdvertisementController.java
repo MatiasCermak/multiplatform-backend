@@ -44,4 +44,9 @@ public class AdvertisementController {
     public ResponseEntity<?> delete(@PathVariable("advertisementId") Integer advertisementId) {
         return ResponseEntity.ok(advertisementService.delete(advertisementId));
     }
+
+    @RequestMapping(value = "{advertisementId}/clicked/{userId}", method = RequestMethod.GET)
+    public ResponseEntity<?> advertisementClicked(@PathVariable("advertisementId") Integer advertisementId, @PathVariable("userId") Integer userId) {
+        return ResponseEntity.ok(advertisementService.clicked(advertisementId, userId));
+    }
 }

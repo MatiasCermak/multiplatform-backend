@@ -2,6 +2,7 @@ package com.ubp.streamingmultiplatform.service;
 
 import com.ubp.streamingmultiplatform.model.AdvertisementDTO;
 import com.ubp.streamingmultiplatform.model.AdvertisementPlanDTO;
+import com.ubp.streamingmultiplatform.model.ClickDTO;
 import com.ubp.streamingmultiplatform.model.InterestDTO;
 import com.ubp.streamingmultiplatform.repository.AdvertisementPlanRepository;
 import com.ubp.streamingmultiplatform.repository.AdvertisementRepository;
@@ -55,5 +56,9 @@ public class AdvertisementService {
 
     public List<AdvertisementDTO> serve(Integer userId, String pageName) {
         return advertisementRepository.serve(userId, pageName);
+    }
+
+    public ClickDTO clicked(Integer advertisement_id, Integer userId) {
+        return advertisementRepository.createAdvertisementClick(userId, advertisement_id);
     }
 }

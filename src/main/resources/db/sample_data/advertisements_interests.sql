@@ -1,0 +1,12 @@
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 6, 1, N'2023-10-25 04:44:28.820', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 7, 1, N'2023-10-25 04:46:37.823', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 8, 1, N'2023-10-25 04:48:56.100', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 9, 1, N'2023-10-25 04:50:23.850', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (2, 10, 1, N'2023-10-25 04:51:36.210', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 11, 1, N'2023-10-25 04:51:56.310', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 12, 1, N'2023-10-25 04:52:41.233', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 13, 1, N'2023-10-25 04:54:47.867', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 14, 1, N'2023-10-25 04:55:25.727', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 15, 1, N'2023-10-25 04:56:38.167', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 16, 1, N'2023-10-25 04:57:10.333', null, null);
+INSERT INTO multiplatform.dbo.advertisements_interests (interest_id, advertisement_id, status, created_at, updated_at, deleted_at) VALUES (1, 17, 1, N'2023-10-25 04:59:41.807', null, null);

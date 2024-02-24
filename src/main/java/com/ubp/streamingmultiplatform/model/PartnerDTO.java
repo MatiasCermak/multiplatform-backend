@@ -19,6 +19,7 @@ public class PartnerDTO {
     private String secret_token;
     private String image_url;
     private Boolean active;
+    private String federation_page;
     private Date created_at;
     private Date updated_at;
     private Date deleted_at;

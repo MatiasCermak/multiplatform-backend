@@ -1,0 +1,4 @@
+SET IDENTITY_INSERT multiplatform.dbo.contents ON;
+INSERT INTO multiplatform.dbo.contents (content_id, eidr_number, name, actors, genre, director, year, total_views, created_at, updated_at, image_url)VALUES (1, N'asdasdasdasd', N'Predator', N'Brus wilis', N'accion', N'brus wilis', N'1000', 100, N'2024-01-19 02:44:11.943', null, N'https://das-temporary-bucket.s3.sa-east-1.amazonaws.com/images/l_76759_43e2730c.jpg');
+INSERT INTO multiplatform.dbo.contents (content_id, eidr_number, name, actors, genre, director, year, total_views, created_at, updated_at, image_url) VALUES (2, N'aaaaaaaaa', N'Fast Five', N'Brus wilis', N'accion', N'brus wilis', N'1000', 200, N'2024-01-19 02:44:11.943', null, N'https://das-temporary-bucket.s3.sa-east-1.amazonaws.com/images/l_241527_da927a3d.jpg');
+SET IDENTITY_INSERT multiplatform.dbo.contents OFF;

@@ -64,7 +64,7 @@ public class AdvertisementPlanRepository {
 
     public AdvertisementPlanDTO retrieve(Integer advertisement_plan_id) {
         SqlParameterSource in = new MapSqlParameterSource()
-                .addValue("partner_id", advertisement_plan_id);
+                .addValue("advertisement_plan_id", advertisement_plan_id);
         SimpleJdbcCall jdbcCall = new SimpleJdbcCall(jdbcTpl)
                 .withProcedureName("retrieve_advertisement_plan")
                 .withSchemaName("dbo")

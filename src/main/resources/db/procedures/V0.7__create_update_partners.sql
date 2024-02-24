@@ -1,7 +1,3 @@
-ALTER TABLE partners
-    DROP COLUMN IF EXISTS advertising_plan_id
-GO
-
 DROP
     PROCEDURE IF EXISTS create_partner
 

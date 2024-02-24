@@ -1,0 +1,12 @@
+SET IDENTITY_INSERT multiplatform.dbo.users ON;
+INSERT INTO multiplatform.dbo.users (user_id, name, last_name, email, username, password, verified_at, created_at, updated_at, deleted_at)VALUES (2, N'Matias', N'Cermak', N'matias.cermak99@gmail.com', N'Matias', N'$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6', N'2023-10-04 17:41:36.000', N'2023-10-04 20:41:51.580', null, null);
+SET IDENTITY_INSERT multiplatform.dbo.users OFF;
+SET IDENTITY_INSERT multiplatform.dbo.users ON;
+INSERT INTO multiplatform.dbo.users (user_id, name, last_name, email, username, password, verified_at, created_at, updated_at, deleted_at)VALUES (5, N'Matias', N'Cermak', N'matias.cermak@gmail.com', N'Matias', N'$2a$10$Bvi7283kY.uE07K0KqAGEOD4cmeAHpwFj6SVXB/XJC/U2m3lOBh/O', N'2023-10-04 17:41:36.000', N'2023-10-04 20:41:51.580', null, null);
+SET IDENTITY_INSERT multiplatform.dbo.users OFF;
+SET IDENTITY_INSERT multiplatform.dbo.users ON;
+INSERT INTO multiplatform.dbo.users (user_id, name, last_name, email, username, password, verified_at, created_at, updated_at, deleted_at)VALUES (1009, N'Matias', N'Cermak', N'matias.cermka@gmail.coom', N'matias.cermka@gmail.coom', N'$2a$10$x0dko4u7H5UuEC3IlJvAwerMI09b/2molIV05fF6YCeq7Asesyw5y', N'2023-10-13 10:25:18.143', N'2023-10-13 13:25:21.760', null, null);
+SET IDENTITY_INSERT multiplatform.dbo.users OFF;
+SET IDENTITY_INSERT multiplatform.dbo.users ON;
+INSERT INTO multiplatform.dbo.users (user_id, name, last_name, email, username, password, verified_at, created_at, updated_at, deleted_at)VALUES (1010, N'Matias', N'Cermak', N'matias.cermak99@hotmail.com', N'matias.cermak99@hotmail.com', N'$2a$10$j1.otsUZvaWd.bKx3lh9yetq2tYTI3Npv4/PB1V5sW2E29bVRzkqa', N'2023-10-13 11:31:45.517', N'2023-10-13 14:31:45.690', null, null);
+SET IDENTITY_INSERT multiplatform.dbo.users OFF;

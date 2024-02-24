@@ -23,20 +23,4 @@ ALTER TABLE user_roles
 ALTER TABLE user_roles
     DROP COLUMN type;
 
-
-
 GO
-
-CREATE PROCEDURE fetchUser(
-    @email AS VARCHAR(100),
-    @password AS VARCHAR(100)
-)
-AS
-BEGIN
-    SELECT *
-    FROM users u
-             JOIN dbo.user_roles ur on u.user_id = ur.user_id
-             JOIN dbo.roles r on ur.role_id = r.role_id
-    WHERE @email = u.email
-      and @password = u.password
-END;

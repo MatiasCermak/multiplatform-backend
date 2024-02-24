@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/partners")
@@ -41,7 +43,22 @@ public class PartnerController {
 
     @RequestMapping(value = "{partnerId}/watch-content/{contentId}/user/{userId}")
     public ResponseEntity<?> watchContent(@PathVariable("partnerId") Integer partnerId, @PathVariable("contentId") Integer contentId, @PathVariable("userId") Integer userId) throws Exception {
-
         return ResponseEntity.ok(partnerService.watch_content(partnerId, contentId, userId));
     }
+
+    @RequestMapping(value = "{partnerId}/transaction-id/{userId}", method = RequestMethod.POST)
+    public ResponseEntity<?> transactionId(@PathVariable("partnerId") Integer partnerId, @PathVariable("userId") Integer userId, @RequestBody Map<String, String> body) throws Exception {
+        return ResponseEntity.ok(partnerService.transaction_id(partnerId, userId, body.get("callback_url")));
+    }
+
+    @RequestMapping(value = "{partnerId}/user/{userId}", method = RequestMethod.DELETE)
+    public ResponseEntity<?> deactivateUserPartner(@PathVariable("partnerId") Integer partnerId, @PathVariable("userId") Integer userId) throws Exception {
+        return ResponseEntity.ok(partnerService.deactivateUserPartner(partnerId, userId));
+    }
+
+    @RequestMapping(value = "request/{transactionId}")
+    public ResponseEntity<?> transactionIdRequest(@PathVariable("transactionId") String transactionId) throws Exception {
+        return ResponseEntity.ok(partnerService.transactionIdRequest(transactionId));
+    }
+
 }

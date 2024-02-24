@@ -1,0 +1,1 @@
+INSERT INTO multiplatform.dbo.agencies (agency_id, name, protocol, url_service, secret_token, active, advertisement_plan_id, created_at, updated_at, deleted_at) VALUES (1, N'Hellobrand', N'SOAP', N'hgfdsjgd', N'1231231', 1, 1, N'2023-10-02 00:52:47.053', null, null);

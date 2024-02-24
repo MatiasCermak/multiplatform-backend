@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,4 +20,5 @@ public class UserDTO {
     private Integer role_id;
     private Integer agency_id;
     private Date verified_at;
+    private String partners;
 }

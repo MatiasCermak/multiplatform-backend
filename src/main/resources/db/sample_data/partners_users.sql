@@ -1,0 +1,2 @@
+INSERT INTO multiplatform.dbo.partners_users (partner_id, user_id, status, type, fee, transaction_id, identity_key, activation_date, created_at, updated_at, deleted_at) VALUES (1, 5, N'ACTIVE', N'SOAP', null, null, null, null, N'2024-01-19 02:43:09.053', null, null);
+INSERT INTO multiplatform.dbo.partners_users (partner_id, user_id, status, type, fee, transaction_id, identity_key, activation_date, created_at, updated_at, deleted_at) VALUES (2, 5, N'ACTIVE', N'SOAP', null, null, null, null, N'2024-01-19 02:43:09.053', null, null);

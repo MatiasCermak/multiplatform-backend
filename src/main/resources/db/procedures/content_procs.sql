@@ -135,17 +135,31 @@ DROP PROCEDURE IF EXISTS retrieve_content
 GO
 
 CREATE PROCEDURE retrieve_content(
-    @content_id INT
+    @content_id INT,
+    @user_id INT
 ) AS
 BEGIN
+    declare @valid_partners table
+                            (
+                                partner_id int
+                            )
+
+    INSERT INTO @valid_partners
+    SELECT pu.partner_id
+    FROM partners_users pu
+             JOIN partners p ON pu.partner_id = p.partner_id
+    WHERE pu.user_id = @user_id
+      AND pu.status = 'ACTIVE'
+      AND p.active = 1;
+
     SELECT *,
-           STUFF((SELECT ',' + CONVERT(NVARCHAR(10), p.partner_id)
-                  FROM partners p
+           STUFF((SELECT ',' + CONVERT(NVARCHAR(10), vp.partner_id)
+                  FROM @valid_partners vp
                            JOIN partners_contents pc
-                                ON @content_id = pc.content_id AND p.partner_id = pc.partner_id
+                                ON c.content_id = pc.content_id AND vp.partner_id = pc.partner_id
                   FOR xml path('')),
                  1, 1, '') AS partners
-    FROM contents
+    FROM contents c
     WHERE content_id = @content_id;
 END
 

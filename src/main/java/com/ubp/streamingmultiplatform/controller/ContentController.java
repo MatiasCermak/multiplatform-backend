@@ -29,13 +29,18 @@ public class ContentController {
         return ResponseEntity.ok(contentService.serve_content_most_watched(userId));
     }
 
-    @RequestMapping(value = "{contentId}", method = RequestMethod.GET)
-    public ResponseEntity<?> retrieve_content(@PathVariable("contentId") Integer contentId) {
-        return ResponseEntity.ok(contentService.retrieve_content(contentId));
+    @RequestMapping(value = "{contentId}/user/{userId}", method = RequestMethod.GET)
+    public ResponseEntity<?> retrieve_content(@PathVariable("contentId") Integer contentId, @PathVariable("userId") Integer userId) {
+        return ResponseEntity.ok(contentService.retrieve_content(contentId, userId));
     }
 
     @RequestMapping(value = "filter/user/{userId}", method = RequestMethod.POST)
     public ResponseEntity<?> filter_content(@PathVariable("userId") Integer userId, @RequestBody ContentFilterRequest contentFilterRequest) {
         return ResponseEntity.ok(contentService.filter_content(userId, contentFilterRequest));
+    }
+
+    @RequestMapping(value = "{contentId}/clicked/{userId}", method = RequestMethod.GET)
+    public ResponseEntity<?> advertisementClicked(@PathVariable("contentId") Integer contentId, @PathVariable("userId") Integer userId) {
+        return ResponseEntity.ok(contentService.clicked(contentId, userId));
     }
 }

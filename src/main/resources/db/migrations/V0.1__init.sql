@@ -81,7 +81,7 @@ CREATE TABLE [partners]
 (
     [partner_id]          INT IDENTITY NOT NULL,
     [name]                VARCHAR(100) NOT NULL,
-    [protocol]           VARCHAR(4)   NOT NULL,
+    [protocol]            VARCHAR(4)   NOT NULL,
     [url_service]         VARCHAR(250) NOT NULL,
     [login_fee]           FLOAT        NOT NULL,
     [register_fee]        FLOAT        NOT NULL,
@@ -99,13 +99,13 @@ CREATE TABLE [partners_users_history]
     [partners_users_history_id] INT IDENTITY NOT NULL,
     [partner_id]                INT          NOT NULL,
     [user_id]                   INT          NOT NULL,
-    [status]                    VARCHAR(10)  NOT NULL,
-    [type]                      VARCHAR(10)  NOT NULL,
+    [status]                    VARCHAR(10),
+    [type]                      VARCHAR(10),
     [transaction_id]            VARCHAR(50),
     [identity_key]              VARCHAR(100),
-    [fee]                       FLOAT        NOT NULL,
+    [fee]                       FLOAT,
     [activation_date]           DATETIME,
-    [valid_from]                DATETIME     NOT NULL,
+    [valid_from]                DATETIME,
     [valid_to]                  DATETIME,
     [created_at]                DATETIME DEFAULT (SYSDATETIME()),
     [updated_at]                DATETIME,
@@ -113,7 +113,6 @@ CREATE TABLE [partners_users_history]
     CONSTRAINT PK__partners_users_history__END PRIMARY KEY (partners_users_history_id),
     CONSTRAINT FK__partners_users_history__users__END FOREIGN KEY (user_id) REFERENCES users (user_id),
     CONSTRAINT FK__partners_users_history__partners__END FOREIGN KEY (partner_id) REFERENCES partners (partner_id),
-    CONSTRAINT UQ__partners_users_history__transaction_id__END UNIQUE (transaction_id)
 );
 
 CREATE TABLE [contents]
@@ -189,8 +188,8 @@ CREATE TABLE [advertisement_plans]
 CREATE TABLE [agencies]
 (
     [agency_id]             INT IDENTITY NOT NULL,
-    [name]                VARCHAR(20),
-    [protocol]             VARCHAR(4),
+    [name]                  VARCHAR(20),
+    [protocol]              VARCHAR(4),
     [url_service]           VARCHAR(300),
     [secret_token]          VARCHAR(50),
     [active]                BIT          NOT NULL DEFAULT (0),
@@ -224,9 +223,8 @@ CREATE TABLE [clicks]
     [click_id]         INT IDENTITY NOT NULL,
     [user_id]          INT          NOT NULL,
     [advertisement_id] INT,
-    [type]             VARCHAR(6),
-    [click_metadata]   VARCHAR(MAX),
-    [date_time]        DATETIME     NOT NULL,
+    [content_id]       INT,
+    [type]             VARCHAR(15),
     [created_at]       DATETIME     NOT NULL DEFAULT (SYSDATETIME()),
     [updated_at]       DATETIME,
     [deleted_at]       DATETIME,
@@ -354,7 +352,7 @@ CREATE TABLE [partners_contents_history]
     [recently_added]               BIT          NOT NULL DEFAULT (0),
     [views]                        INT          NOT NULL DEFAULT (0),
     [promoted]                     BIT          NOT NULL DEFAULT (0),
-    [created_at]                   DATETIME     NOT NULL,
+    [created_at]                   DATETIME     NOT NULL DEFAULT (SYSDATETIME()),
     CONSTRAINT PK__partners_contents_history__END PRIMARY KEY (partners_contents_history_id),
     CONSTRAINT FK__partners_contents_history__partners__END FOREIGN KEY (partner_id) REFERENCES partners (partner_id),
     CONSTRAINT FK__partners_contents_history__contents__END FOREIGN KEY (content_id) REFERENCES contents (content_id)

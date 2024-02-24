@@ -1,0 +1,12 @@
+SET IDENTITY_INSERT multiplatform.dbo.interests ON;
+INSERT INTO multiplatform.dbo.interests (interest_id, name, description, created_at, updated_at, deleted_at)VALUES (1, N'Sports', N'Sports and sport adjacent topics.', N'2023-10-13 13:13:23.523', null, null);
+SET IDENTITY_INSERT multiplatform.dbo.interests OFF;
+SET IDENTITY_INSERT multiplatform.dbo.interests ON;
+INSERT INTO multiplatform.dbo.interests (interest_id, name, description, created_at, updated_at, deleted_at)VALUES (2, N'Technology', N'Technology and IT.', N'2023-10-13 13:13:23.537', null, null);
+SET IDENTITY_INSERT multiplatform.dbo.interests OFF;
+SET IDENTITY_INSERT multiplatform.dbo.interests ON;
+INSERT INTO multiplatform.dbo.interests (interest_id, name, description, created_at, updated_at, deleted_at)VALUES (3, N'Nature', N'Nature and environment.', N'2023-10-13 13:13:23.547', null, null);
+SET IDENTITY_INSERT multiplatform.dbo.interests OFF;
+SET IDENTITY_INSERT multiplatform.dbo.interests ON;
+INSERT INTO multiplatform.dbo.interests (interest_id, name, description, created_at, updated_at, deleted_at)VALUES (4, N'Entertainment', N'Entertainment and entertainment-adjacent content.', N'2023-10-13 13:13:23.547', null, null);
+SET IDENTITY_INSERT multiplatform.dbo.interests OFF;

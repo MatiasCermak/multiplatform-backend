@@ -1,5 +1,6 @@
 package com.ubp.streamingmultiplatform.service;
 
+import com.ubp.streamingmultiplatform.model.ClickDTO;
 import com.ubp.streamingmultiplatform.model.ContentServeDTO;
 import com.ubp.streamingmultiplatform.model.request.ContentFilterRequest;
 import com.ubp.streamingmultiplatform.model.response.ContentResponse;
@@ -31,8 +32,8 @@ public class ContentService {
         return contents.stream().map(this::convertToResponse).toList();
     }
 
-    public ContentResponse retrieve_content(Integer contentId) {
-        ContentServeDTO content = contentRepository.retrieve_content(contentId);
+    public ContentResponse retrieve_content(Integer contentId, Integer userId) {
+        ContentServeDTO content = contentRepository.retrieve_content(contentId, userId);
         return convertToResponse(content);
     }
 
@@ -41,6 +42,10 @@ public class ContentService {
         String cfrQuery = contentFilterRequest.getField() + "=" + wrappedValue;
         List<ContentServeDTO> contents = contentRepository.filter_content(userId, cfrQuery);
         return contents.stream().map(this::convertToResponse).toList();
+    }
+
+    public ClickDTO clicked(Integer content_id, Integer userId) {
+        return contentRepository.createAdvertisementClick(userId, content_id);
     }
 
     private ContentResponse convertToResponse(ContentServeDTO contentServeDTO) {

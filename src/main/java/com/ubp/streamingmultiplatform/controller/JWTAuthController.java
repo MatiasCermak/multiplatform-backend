@@ -13,8 +13,13 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.security.authentication.AuthenticationManager;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 
 @RestController
@@ -39,8 +44,11 @@ public class JWTAuthController {
 
         final String token = jwtTokenUtil.generateToken(userDetails);
         final UserDTO user = userDetailsService.loadUserByMail(authenticationRequest.getEmail());
-
-        return ResponseEntity.ok(new JWTResponse(token, user));
+        List<String> partners = null;
+        if(!StringUtils.isEmpty(user.getPartners())) {
+            partners = Arrays.asList(user.getPartners().split(","));
+        }
+        return ResponseEntity.ok(new JWTResponse(token, user, partners));
     }
 
     @RequestMapping(value = "register", method = RequestMethod.POST)

@@ -41,7 +41,6 @@ public class ProcUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("The mail " + mail + " was not found");
         }
 
-        List<SimpleGrantedAuthority> authorities = userDTOList.stream().map( c -> new SimpleGrantedAuthority(c.getRole_name())).toList();
         UserDTO userDTO = userDTOList.get(0);
         userDTO.setPassword(null);
         return userDTO;

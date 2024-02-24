@@ -9,3 +9,5 @@ IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'part
         ALTER TABLE partners
             ADD image_url VARCHAR(MAX);
     END;
+
+ALTER TABLE partners DROP COLUMN IF EXISTS advertising_plan_id;
